@@ -8,18 +8,21 @@ public class Printer {
         this.toner = toner;
     }
 
-    public boolean readyToPrint(int pages, int copies) {
-        if (this.paper >= (pages * copies)) {
-            return true;
-        } else {
-            return false;
+    public int getPaper() {
+        return this.paper;
+    }
+
+    public void print(int pages, int copies){
+        int totalPages = pages * copies;
+
+        if (this.paper > totalPages){
+            this.paper -= totalPages;
+            this.toner -= totalPages;
         }
     }
 
-    public int print(int pages, int copies) {
-        this.paper = this.paper - (pages * copies);
-        this.toner = this.toner - (pages * copies);
-        return this.paper & this.toner;
+    public int getToner() {
+        return this.toner;
     }
 
 }

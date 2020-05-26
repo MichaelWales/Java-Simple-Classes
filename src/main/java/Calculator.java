@@ -12,8 +12,8 @@ public class Calculator {
         return num1 * num2;
     }
 
-    public double divide(double dub1, double dub2) {
-        return dub1 / dub2;
+    public double divide(double num1, double num2) {
+        return num1 / num2;
     }
 
 }
